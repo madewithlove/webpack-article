@@ -65,6 +65,9 @@ module.exports = {
         chunkFilename: '[name]-[chunkhash].js',
         publicPath:    'builds/',
     },
+    devServer: {
+        hot: true,
+    },
 
     plugins: plugins,
     module:  {
