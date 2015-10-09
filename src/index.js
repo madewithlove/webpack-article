@@ -7,3 +7,12 @@ if (document.querySelectorAll('a').length) {
         button.render('a');
     });
 }
+
+// If we have a title, render the Header component on it
+if (document.querySelectorAll('h1').length) {
+    require.ensure([], () => {
+        const Header = require('./Components/Header');
+
+        new Header().render('h1');
+    });
+}
