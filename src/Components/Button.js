@@ -1,7 +1,5 @@
 import $ from 'jquery';
-import template from './Button.html';
 import Mustache from 'mustache';
-import './Button.scss';
 
 export default class Button {
     constructor(link) {

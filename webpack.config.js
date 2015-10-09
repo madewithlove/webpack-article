@@ -4,7 +4,7 @@ var ExtractPlugin = require('extract-text-webpack-plugin');
 var production = process.env.NODE_ENV === 'production';
 
 var plugins = [
-    new ExtractPlugin('bundle.css'),
+    new ExtractPlugin('bundle.css', {allChunks: true}),
     new webpack.optimize.CommonsChunkPlugin({
         name:      'main', // Move dependencies to our main file
         children:  true, // Look for common dependencies in all children,
@@ -73,6 +73,12 @@ module.exports = {
 
     plugins: plugins,
     module:  {
+        preLoaders: [
+            {
+                test: /\.js/,
+                loader: 'baggage?[file].html=template&[file].scss',
+            }
+        ],
         loaders: [
             {
                 test:    /\.js/,
