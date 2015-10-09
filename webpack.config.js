@@ -92,7 +92,11 @@ module.exports = {
             {
                 test:   /\.html/,
                 loader: 'html',
-            }
+            },
+            {
+                test:   /\.(png|gif|jpe?g|svg)$/i,
+                loader: 'url',
+            },
         ],
     }
 };
